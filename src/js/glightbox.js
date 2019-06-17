@@ -1143,6 +1143,14 @@ function touchNavigation() {
             if (hasClass(body, 'gdesc-open')) {
                 return;
             }
+
+            // ignore touch events in description (to enable overflow-y)
+            let t = e.target
+            do {
+                if(hasClass(t, 'gslide-description')) return;
+                t = t.parentElement
+            } while(t);
+
             addClass(body, 'touching');
             activeSlide = this.getActiveSlide()
             activeSlideImage = activeSlide.querySelector('.gslide-image')

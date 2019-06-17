@@ -1192,6 +1192,14 @@
                 if (hasClass(body, 'gdesc-open')) {
                     return;
                 }
+
+                // ignore touch events in description (to enable overflow-y)
+                var t = e.target;
+                do {
+                    if (hasClass(t, 'gslide-description')) return;
+                    t = t.parentElement;
+                } while (t);
+
                 addClass(body, 'touching');
                 activeSlide = _this4.getActiveSlide();
                 activeSlideImage = activeSlide.querySelector('.gslide-image');
