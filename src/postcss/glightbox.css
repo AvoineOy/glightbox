@@ -317,6 +317,8 @@
  * something like facebook does the description
  * for the photos
 */
+
+/*
 .glightbox-mobile .glightbox-container{
     .gslide-description {
         background: transparent;
@@ -348,7 +350,7 @@
         }
     }
 }
-
+*/
 .gdesc-open {
     .gslide-media {
         transition: opacity .5s ease;
